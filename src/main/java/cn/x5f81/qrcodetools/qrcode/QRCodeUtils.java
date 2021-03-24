@@ -17,10 +17,8 @@ public class QRCodeUtils {
                 QRCodeUtilConstant.Q_R_CODE_ENCODE_HINTS);// 生成矩阵
         return MatrixToImageWriter.toBufferedImage(bitMatrix);
     }
-
     public static String Decode(BufferedImage qRCodeImage) throws NotFoundException {
         BufferedImageLuminanceSource source = new BufferedImageLuminanceSource(qRCodeImage);
-
         BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(source));
         Result result = new MultiFormatReader().decode(binaryBitmap, QRCodeUtilConstant.Q_R_CODE_DECODE_HINTS);
         return result.getText();

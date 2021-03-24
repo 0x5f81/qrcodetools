@@ -17,5 +17,4 @@ public class QRCodeToolsApplication {
         ctx = new SpringApplicationBuilder(QRCodeToolsApplication.class)
                 .headless(false).run(args);
     }
-
 }
